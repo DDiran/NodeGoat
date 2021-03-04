@@ -77,7 +77,8 @@ jobs:
               -vid $VERACODE_API_ID 
               -vkey $VERACODE_API_KEY 
               -action uploadandscan 
-              -appname $VERACODE_APP_NAME 
+            # -appname $VERACODE_APP_NAME 
+              -appname "NodeGoat - CircleCI Integration"
               -createprofile false 
               -version CircleCI-$CIRCLE_BUILD_NUM 
               -filepath upload.zip
