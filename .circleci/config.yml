@@ -71,17 +71,16 @@ jobs:
 
       # upload for scanning
       # env vars are used to pass login creds and set the scan name
-      # -appname $VERACODE_APP_NAME 
       - run:
-          name: "Upload to Veracode"
+          name: "Upload to Veracode (Policy Scan)"
           command: java -jar VeracodeJavaAPI.jar 
               -vid $VERACODE_API_ID 
               -vkey $VERACODE_API_KEY 
               -action uploadandscan 
-              -appname NodeGoat - CircleCI Integration
+              -appname $VERACODE_APP_NAME 
               -createprofile false 
               -version CircleCI-$CIRCLE_BUILD_NUM 
-              -filepath upload.zip
+              -filepath upload.zip 
 
   # job to upload to Veracode for scanning
   srcclr_scan:
